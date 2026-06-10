@@ -145,6 +145,7 @@ footer {
 .project-link {
   display: block;
   color: inherit;
+  font-weight: inherit;
   text-decoration: none;
 }
 
