@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Galaxy Formation | Moazzam Maan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <header>
+        <div class="name">Percolation Model of Spiral Galaxy Formation</div>
+        <div class="nav">
+          <a href="index.html">home</a>
+          <span>/</span>
+          <a href="projects.html">projects</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <section class="project-page">
+        <p class="tags">Computational Astrophysics</p>
+
+        <div class="project-info">
+          <p>
+            <strong>Supervisor:</strong>
+            <a href="https://www.roanoke.edu/profiles/le_truong"
+              >Dr. Truong Le</a
+            >
+          </p>
+          <p>
+            <strong>Partner:</strong>
+            <a href="https://www.linkedin.com/in/chloe-amberman/">
+              Chloe Amberman
+            </a>
+          </p>
+        </div>
+
+        <h2>Overview</h2>
+
+        <p>
+          This project is based on
+          <a href="https://doi.org/10.1080/00018739000101461">
+            <em>Percolation Model of Galactic Structure</em></a
+          >
+          by Philip E. Seiden and Lawrence S. Schulman. The paper presents a
+          percolation-based model for simulating spiral galaxies using a
+          stochastic cellular automaton.
+        </p>
+
+        <p>
+          The paper describes two models: a simple percolation model and a
+          gas-regulated model. Our work focused on recreating both models,
+          understanding the assumptions needed to reproduce their behavior, and
+          testing how well local stochastic rules can produce large-scale spiral
+          structure.
+        </p>
+
+        <h2>Presentation</h2>
+
+        <figure class="wide-figure">
+          <a
+            class="image-link"
+            href="assets/percolation-model/vas.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/percolation-model/vas.jpg"
+              alt="Moazzam Maan and Chloe Amberman presenting at VAS 2026"
+            />
+          </a>
+          <figcaption>
+            Presenting this work with Chloe Amberman at the Virginia Academy of
+            Science 2026 Annual Meeting.
+          </figcaption>
+        </figure>
+
+        <p>
+          We presented this project at the
+          <a href="https://www.vacadsci.org/2026_annual_meeting.php">
+            Virginia Academy of Science 2026 Annual Meeting</a
+          >
+          and won
+          <a href="https://vacadsci.org/news_manager.php?page=32211">
+            Best Poster</a
+          >
+          in Astronomy, Math and Physics.
+        </p>
+
+        <h2>Our Contributions</h2>
+
+        <article class="detail-box">
+          <h3>Open-source recreation of both models</h3>
+
+          <p>
+            We created an
+            <a
+              href="https://github.com/mhmaan/Schulman-Seiden-Galaxy-Simulation"
+            >
+              open-source recreation</a
+            >
+            of both the simple model and the gas-regulated model. To our
+            knowledge, while there are other recreations of parts of this work,
+            there was not an open-source recreation of both models together.
+          </p>
+
+          <p>
+            This matters because the percolation process is stochastic, and the
+            original paper does not provide every implementation detail needed
+            to directly reproduce the results. We implemented the models and
+            recreated many of the paper's results, which supports the accuracy
+            of our implementation.
+          </p>
+        </article>
+
+        <article class="detail-box">
+          <h3>Connection to early galaxy formation</h3>
+
+          <p>
+            Using the simple model, we took inspiration from the
+            <a href="https://www.nature.com/articles/s41586-024-08293-0">
+              Firefly Sparkle</a
+            >, an observed galaxy in the process of formation whose stellar mass
+            is concentrated in about ten star clusters.
+          </p>
+
+          <p>
+            We tested whether this kind of clustered beginning could be
+            consistent with percolation-driven galaxy formation. We found that
+            even starting with as few as 1–10 initial star-forming clusters can
+            lead to a nonzero creation rate of natural-looking spiral galaxies
+            in the simple model.
+          </p>
+        </article>
+
+        <h2>Recreated Figures</h2>
+
+        <p>
+          Below are side-by-side comparisons between selected figures from the
+          original paper and our recreations. The left image in each pair is
+          from the paper; the right image is our recreation.
+        </p>
+
+        <div class="comparison-grid">
+          <article class="comparison-card">
+            <h3>Figure 10</h3>
+            <div class="comparison-pair">
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/them/10.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/them/10.png"
+                    alt="Original figure 10 from the paper"
+                  />
+                </a>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/me/10.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/me/10.png"
+                    alt="Recreated figure 10"
+                  />
+                </a>
+                <figcaption>Recreation</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <h3>Figure 11</h3>
+            <div class="comparison-pair">
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/them/11.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/them/11.png"
+                    alt="Original figure 11 from the paper"
+                  />
+                </a>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/me/11.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/me/11.png"
+                    alt="Recreated figure 11"
+                  />
+                </a>
+                <figcaption>Recreation</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <h3>Figure 12</h3>
+            <div class="comparison-pair">
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/them/12.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/them/12.png"
+                    alt="Original figure 12 from the paper"
+                  />
+                </a>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/me/12.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/me/12.png"
+                    alt="Recreated figure 12"
+                  />
+                </a>
+                <figcaption>Recreation</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <h3>Figure 16</h3>
+            <div class="comparison-pair">
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/them/16.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/them/16.png"
+                    alt="Original figure 16 from the paper"
+                  />
+                </a>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/me/16.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/me/16.png"
+                    alt="Recreated figure 16"
+                  />
+                </a>
+                <figcaption>Recreation</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <h3>Figure 24</h3>
+            <div class="comparison-pair">
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/them/24.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/them/24.png"
+                    alt="Original figure 24 from the paper"
+                  />
+                </a>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure>
+                <a
+                  class="image-link"
+                  href="assets/percolation-model/me/24.png"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="assets/percolation-model/me/24.png"
+                    alt="Recreated figure 24"
+                  />
+                </a>
+                <figcaption>Recreation</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <h2>References</h2>
+
+        <ul>
+          <li>
+            Philip E. Seiden and Lawrence S. Schulman,
+            <a href="https://doi.org/10.1080/00018739000101461">
+              <em>Percolation Model of Galactic Structure</em></a
+            >, Advances in Physics, 1990.
+          </li>
+
+          <li>
+            Lamiya Mowla et al.,
+            <a href="https://www.nature.com/articles/s41586-024-08293-0">
+              <em>
+                Formation of a Low-Mass Galaxy from Star Clusters in a
+                600-Million-Year-Old Universe</em
+              ></a
+            >, Nature, 2024.
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <footer>
+        <a href="mailto:mhmaan@mail.roanoke.edu">mhmaan@mail.roanoke.edu</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/moazzam-maan-580829288/">
+          linkedin.com/in/moazzam-maan-580829288
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>
