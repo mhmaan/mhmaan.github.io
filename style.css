@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #cfcfcf;
+  color: #111;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+}
+
+.page {
+  width: min(920px, calc(100% - 32px));
+  margin: 28px auto;
+  padding: 34px 42px;
+  background: #f8f8f8;
+  border: 2px solid #555;
+  box-shadow: 6px 6px 0 #999;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav,
+footer {
+  font-size: 14px;
+}
+
+a {
+  color: #0000aa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #000;
+  background: #dcdcdc;
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #fff;
+  margin: 26px 0;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border: 1px solid #222;
+}
+
+.text {
+  max-width: 560px;
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.55;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 700px) {
+  .page {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    box-shadow: none;
+    padding: 26px;
+  }
+
+  header {
+    display: block;
+  }
+
+  .nav {
+    margin-top: 10px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    max-width: 260px;
+  }
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.project-list {
+  display: grid;
+  gap: 18px;
+}
+
+.project {
+  padding: 18px 20px;
+  border: 1px solid #777;
+  background: #f4f4f4;
+}
+
+.project h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.project p {
+  margin: 0;
+}
+
+.project .project-meta {
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.projects {
+  display: grid;
+  gap: 24px;
+}
+
+.project {
+  padding: 22px 24px;
+  background: #f8f8f8;
+  border: 2px solid #555;
+  box-shadow: 6px 6px 0 #999;
+}
+
+.project h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+}
+
+.project .tags {
+  margin: 0 0 14px;
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.project p {
+  margin: 0;
+  line-height: 1.5;
+}
