@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mario Kart 64 Gameplay Analytics | Moazzam Maan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <header>
+        <div class="name">Statistical Analysis of Mario Kart 64 Race Data</div>
+        <div class="nav">
+          <a href="index.html">home</a>
+          <span>/</span>
+          <a href="projects.html">projects</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <section class="project-page">
+        <p class="tags">Data Science / Student Engagement</p>
+
+        <div class="project-info">
+          <p>
+            <strong>Advisor:</strong>
+            <a href="https://www.roanoke.edu/profiles/weselcouch_michael">
+              Dr. Michael Weselcouch
+            </a>
+          </p>
+        </div>
+
+        <h2>Overview</h2>
+
+        <p>
+          This was a semester-long project where we set up Mario Kart 64 in the
+          Math, Computer Science and Physics common room and let students play
+          2-player versus races throughout the semester. The goal was part data
+          collection, part community engagement, and part excuse to make the
+          common room way more fun.
+        </p>
+
+        <p>
+          Using <a href="https://tasvideos.org/Bizhawk">BizHawk</a>, we emulated
+          Mario Kart 64 and ran the games through a custom Lua script I wrote.
+          The script read values directly from emulator memory and logged race
+          data for both players, including their characters, course, in-game
+          time, positions, placements, items, checkpoint information, and the
+          winner.
+        </p>
+
+        <article class="detail-box">
+          <h3>The semester in numbers</h3>
+
+          <p>
+            By the end of the semester, we had collected 1,298 completed races
+            from 43 players, across 151 matchups, 16 courses, and 9 characters.
+            The average race was about 2 minutes and 29 seconds, which works out
+            to roughly 54 hours of race logs.
+          </p>
+
+          <p>
+            For this article, I anonymized everyone's usernames with random word
+            aliases except for my own username.
+          </p>
+        </article>
+
+        <h2>Making the Data Fun</h2>
+
+        <p>
+          Every night, I processed the new races and posted the new rankings, as
+          well as some other fun stats next to the setup. The rankings were
+          computed using
+          <a href="https://apps.roanoke.edu/minton/RatingsPaper.pdf">
+            Dr. Roland Minton's rating system</a
+          >. So there was indeed some math involved! The semester ended with a
+          tournament where the winner got a prize. I'll let you guess who won (i
+          did).
+        </p>
+
+        <article class="detail-box">
+          <h3>The goal now</h3>
+          <p>
+            The current goal is to turn this dataset into a statistics and data
+            science teaching module in the style of the
+            <a href="https://scorenetwork.org/">SCORE Network</a>, where
+            students can learn from data that is familiar, competitive, and
+            actually fun to explore.
+          </p>
+        </article>
+
+        <h2>Activity Over the Semester</h2>
+
+        <figure class="wide-figure">
+          <a
+            class="image-link"
+            href="assets/kart/games_by_week.png"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/kart/games_by_week.png"
+              alt="Games played each week during the Mario Kart 64 project"
+            />
+          </a>
+          <figcaption>Games played each week over the semester.</figcaption>
+        </figure>
+
+        <h2>Leaderboards</h2>
+
+        <div class="small-figure-grid">
+          <figure>
+            <a
+              class="image-link"
+              href="assets/kart/top_players_by_games.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/kart/top_players_by_games.png"
+                alt="Top players by number of games played"
+              />
+            </a>
+            <figcaption>The most active players over the semester.</figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/kart/top_players_by_wins.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/kart/top_players_by_wins.png"
+                alt="Top players by number of wins"
+              />
+            </a>
+            <figcaption>The players with the most wins.</figcaption>
+          </figure>
+        </div>
+
+        <article class="detail-box">
+          <h3>Some highlights</h3>
+
+          <ul class="highlight-list">
+            <li>
+              <strong>Most active player:</strong> moss played 504 games and
+              also had the most wins, with 378.
+            </li>
+
+            <li>
+              <strong>My very necessary contribution:</strong> I played 312
+              games, which is maybe too many, but someone had to make sure the
+              data pipeline worked.
+            </li>
+
+            <li>
+              <strong>Most common matchup:</strong> apollo vs moss happened 114
+              times.
+            </li>
+
+            <li>
+              <strong>Closest big rivalry:</strong> moss vs rhythm played 52
+              games, with rhythm barely leading the series 27–25.
+            </li>
+
+            <li>
+              <strong>Biggest comeback:</strong> slate beat mhmaan (complete
+              fluke) on Toad's Turnpike after spending only 2.7% of the race
+              time in first place.
+            </li>
+
+            <li>
+              <strong>Most played courses:</strong> Kalimari Desert led with 159
+              games, followed by Moo Moo Farm with 150 and Luigi Raceway with
+              139.
+            </li>
+
+            <li><strong>Most used character:</strong> Toad, with 776 uses.</li>
+          </ul>
+        </article>
+
+        <h2>Courses and Characters</h2>
+
+        <div class="small-figure-grid">
+          <figure>
+            <a
+              class="image-link"
+              href="assets/kart/most_played_courses.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/kart/most_played_courses.png"
+                alt="Most played Mario Kart 64 courses"
+              />
+            </a>
+            <figcaption>The most played courses in the dataset.</figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/kart/most_common_matchups.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/kart/most_common_matchups.png"
+                alt="Most common player matchups"
+              />
+            </a>
+            <figcaption>The most common player matchups.</figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/kart/character_usage.png"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/kart/character_usage.png"
+                alt="Mario Kart 64 character usage"
+              />
+            </a>
+            <figcaption>Character usage across all recorded races.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <hr />
+
+      <footer>
+        <a href="mailto:mhmaan@mail.roanoke.edu">mhmaan@mail.roanoke.edu</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/moazzam-maan-580829288/">
+          linkedin.com/in/moazzam-maan-580829288
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>

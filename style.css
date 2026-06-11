@@ -398,3 +398,13 @@ video {
     max-width: 100%;
   }
 }
+
+.highlight-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.highlight-list li {
+  margin: 10px 0;
+  line-height: 1.5;
+}
