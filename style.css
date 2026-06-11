@@ -314,7 +314,7 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  img {
+  .intro img {
     max-width: 260px;
   }
 
@@ -367,4 +367,28 @@ figcaption {
 .medium-figure img {
   width: 100%;
   display: block;
+}
+
+video {
+  width: 100%;
+  display: block;
+  border: 2px solid #555;
+  background: black;
+  box-shadow: 6px 6px 0 #999;
+}
+
+.small-figure-grid figure:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+  justify-self: center;
+}
+
+@media (max-width: 700px) {
+  .small-figure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .small-figure-grid figure:last-child:nth-child(odd) {
+    max-width: 100%;
+  }
 }

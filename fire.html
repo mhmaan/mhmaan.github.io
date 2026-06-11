@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>3D Wildfire Visualization | Moazzam Maan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <header>
+        <div class="name">3D Wildfire Visualization</div>
+        <div class="nav">
+          <a href="index.html">home</a>
+          <span>/</span>
+          <a href="projects.html">projects</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <section class="project-page">
+        <p class="tags">Wildfire Modeling / Web Visualization / VR</p>
+
+        <div class="project-info">
+          <p>
+            <strong>Supervisor:</strong>
+            <a href="https://www.roanoke.edu/profiles/shende_anil"
+              >Dr. Anil Shende</a
+            >
+          </p>
+          <p>
+            <strong>Partner:</strong>
+            <a href="https://www.linkedin.com/in/liz-satynska-64494b295/">
+              Liz Satynska
+            </a>
+          </p>
+        </div>
+
+        <div class="award-note">
+          <p class="award-note-label">Awards / Recognition</p>
+          <p>
+            Won <strong>third place</strong> at the CCSC Student Research
+            Showcase in 2025.
+          </p>
+          <p>
+            Placed <strong>top 10</strong> nationally in the SERDP/ESTCP Virtual
+            Wildfire Modeling and Immersive Training Prize Challenge.
+          </p>
+        </div>
+
+        <h2>Overview</h2>
+
+        <p>
+          This was a project I worked on while interning at the USDA Forest
+          Service. The project revolved around
+          <a href="https://research.fs.usda.gov/treesearch/59686">QUIC-Fire</a>,
+          a cellular-automaton-based wildfire simulator. QUIC-Fire outputs huge
+          amounts of binary simulation data, and our job was to build an
+          efficient visualizer for that output. Or, as efficient as one can be
+          while dealing with hundreds of gigabytes of data. Bonus points if we
+          could integrate VR.
+        </p>
+
+        <h2>Presentations</h2>
+
+        <div class="small-figure-grid">
+          <figure>
+            <a
+              class="image-link"
+              href="assets/fire/ccsc.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/fire/ccsc.jpg"
+                alt="Presenting wildfire visualization work at CCSC"
+              />
+            </a>
+            <figcaption>
+              Presenting this work at the CCSC Student Research Showcase.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/fire/ncur.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/fire/ncur.jpg"
+                alt="Presenting wildfire visualization work at NCUR"
+              />
+            </a>
+            <figcaption>Presenting this work at NCUR.</figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/fire/nurva.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/fire/nurva.jpg"
+                alt="Presenting wildfire visualization work at the Virginia Capitol"
+              />
+            </a>
+            <figcaption>
+              Presenting this work at the Second Annual Undergraduate Research
+              Showcase at the Capitol.
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul>
+          <li>
+            <strong>CCSC Student Research Showcase, 2025.</strong>
+            Presented this project at the
+            <a href="http://www.ccscse.org/papercontest.php?year=39th">
+              Consortium for Computing Sciences in Colleges Student Research
+              Showcase</a
+            >, where it won third place.
+          </li>
+
+          <li>
+            <strong
+              >National Conference on Undergraduate Research, 2026.</strong
+            >
+            Presented this project as a poster at
+            <a href="https://www.cur.org/events-services/ncur/">NCUR</a>.
+          </li>
+
+          <li>
+            <strong>
+              Second Annual Undergraduate Research Showcase at the Capitol,
+              2026.
+            </strong>
+            Presented this work at the Virginia Capitol. We were the only
+            students from Roanoke College selected to present there.
+          </li>
+        </ul>
+
+        <article class="detail-box">
+          <h3>Why Web-Based?</h3>
+
+          <p>
+            To avoid licensing issues with proprietary game engines, we decided
+            to go with a simple web-based solution. This also meant better
+            compatibility, and our goal was to eventually have it running on a
+            phone. Which we did. yay!
+          </p>
+
+          <p>
+            The natural solution was
+            <a href="https://aframe.io/">A-Frame</a>, which is built on
+            <a href="https://threejs.org/">Three.js</a>. Three.js has been
+            around since 2010, so it has a lot of support, which is very useful.
+            A-Frame also supports VR - again, bonus points!
+          </p>
+        </article>
+
+        <article class="detail-box">
+          <h3>Terrain</h3>
+
+          <p>
+            We first read the heightmap and rendered the terrain. Then, using a
+            clever
+            <a href="https://en.wikipedia.org/wiki/Bounding_volume_hierarchy">
+              bounding volume hierarchy</a
+            >
+            raycasting add-on for Three.js called
+            <a href="https://github.com/gkjohnson/three-mesh-bvh">
+              three-mesh-bvh</a
+            >, we allow the user to walk around on the terrain with little
+            computation.
+          </p>
+        </article>
+
+        <figure class="wide-figure">
+          <video controls preload="metadata">
+            <source src="assets/fire/terrain.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>
+            The terrain! This is based on some place in Arizona (I think). I'm
+            too lazy to confirm.
+          </figcaption>
+        </figure>
+
+        <article class="detail-box">
+          <h3>Trees</h3>
+
+          <p>
+            We used <a href="https://www.eztree.dev/">EZTree</a> to generate the
+            trees. We just needed something that worked. Trees could honestly be
+            their own entire project, and making custom trees that perfectly
+            matched QUIC-Fire's internal descriptions would have been a whole
+            separate challenge. We did the best we could with the parameters
+            EZTree exposed.
+          </p>
+        </article>
+
+        <article class="detail-box">
+          <h3>Fire</h3>
+
+          <p>
+            The next step was reading the fire data and visualizing it. This
+            used a combination of
+            <a
+              href="https://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/"
+            >
+              billboarding</a
+            >
+            and custom
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders"
+            >
+              GLSL shader code</a
+            >. The focus was, once again, efficiency + fidelity. We could make
+            the fire look cooler later.
+          </p>
+        </article>
+
+        <article class="detail-box">
+          <h3>Smoke</h3>
+
+          <p>
+            QUIC-Fire also outputs smoke data. We visualized the smoke as 2D
+            planes arranged in blocks, which helped preserve the
+            cellular-automaton nature of the simulation.
+          </p>
+        </article>
+
+        <figure class="wide-figure">
+          <video controls preload="metadata">
+            <source src="assets/fire/smoke.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>
+            The smoke! See it doesn't look that bad when you are far away.
+          </figcaption>
+        </figure>
+
+        <article class="detail-box">
+          <h3>Wind</h3>
+
+          <p>
+            The wind data gets visualized as a sort of vector field. You just
+            see arrows that point in the direction of the wind.
+          </p>
+          <p>
+            I've been playing video games all my life, and I never really
+            thought about how challenging it is to visualize things that rely on
+            senses other than our ocular ones. Wind is one of those things. You
+            can feel it, hear it, and see what it does, but you do not really
+            see wind itself. After iterating through many, many ideas, we ended
+            up visualizing it as a vector field.
+          </p>
+        </article>
+
+        <figure class="wide-figure">
+          <video controls preload="metadata">
+            <source src="assets/fire/wind.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>
+            The wind! The blue dots are actually arrows, which get clearer as
+            you get closer.
+          </figcaption>
+        </figure>
+
+        <aside class="detail-box author-note">
+          <p class="author-note-label">Personal Note</p>
+
+          <p>
+            the goal is to make this open source eventually. it is a process. we
+            are working on it, trust me.
+          </p>
+        </aside>
+      </section>
+
+      <hr />
+
+      <footer>
+        <a href="mailto:mhmaan@mail.roanoke.edu">mhmaan@mail.roanoke.edu</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/moazzam-maan-580829288/">
+          linkedin.com/in/moazzam-maan-580829288
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>
