@@ -369,6 +369,12 @@ figcaption {
   display: block;
 }
 
+.plain-media img {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
 video {
   width: 100%;
   display: block;
