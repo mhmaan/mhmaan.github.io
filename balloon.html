@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>High-Altitude Balloon | Moazzam Maan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <header>
+        <div class="name">High-Altitude Balloon</div>
+        <div class="nav">
+          <a href="index.html">home</a>
+          <span>/</span>
+          <a href="projects.html">projects</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <section class="project-page">
+        <p class="tags">Data Analysis / Engineering</p>
+
+        <div class="project-info">
+          <p>
+            <strong>Supervisor:</strong>
+            <a href="https://www.roanoke.edu/profiles/le_truong">
+              Dr. Truong Le
+            </a>
+          </p>
+          <p><strong>Team:</strong> 10+ students</p>
+        </div>
+
+        <h2>Overview</h2>
+
+        <p>
+          This project was a team effort to build and launch a high-altitude
+          balloon experiment. The plan was for the balloon to rise to around 30
+          km in the atmosphere, collect data along the way, burst at peak
+          altitude, deploy a parachute, and then float safely back down to the
+          ground.
+        </p>
+
+        <p>
+          The balloon launched from Green Hill Park in Salem, Virginia, and
+          landed just east of South Boston, Virginia. It covered roughly 130
+          miles in just under four hours. It was only able to reach an altitude
+          of about 27 km rather than the expected 30 km, and traveled farther
+          than we expected. We suspect there may have been a leak in the
+          balloon, which slowed the climb and delayed the burst.
+        </p>
+
+        <h2>Launch</h2>
+
+        <div class="small-figure-grid">
+          <figure>
+            <a
+              class="image-link"
+              href="assets/balloon/team2.JPEG"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/balloon/team2.JPEG"
+                alt="The balloon team preparing before launch"
+              />
+            </a>
+            <figcaption>
+              The team getting everything ready before takeoff.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/balloon/team1.JPEG"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/balloon/team1.JPEG"
+                alt="The balloon team after successful takeoff"
+              />
+            </a>
+            <figcaption>The team after a successful takeoff.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="wide-figure medium-figure">
+          <a
+            class="image-link"
+            href="assets/balloon/balloon.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/balloon/balloon.jpg"
+              alt="The balloon flying away after launch"
+            />
+          </a>
+          <figcaption>
+            The balloon becoming a tiny spot in the sky shortly after launch.
+          </figcaption>
+        </figure>
+
+        <h2>My Contribution</h2>
+
+        <article class="detail-box">
+          <h3>Electronics and data collection</h3>
+
+          <p>
+            My main work was writing the code for data collection and pre-flight
+            checks, along with putting together the electronics for the payload.
+            Naturally, since this was a very team-heavy project, I was also
+            involved with other team decisions and problem solving.
+          </p>
+
+          <p>We used the following electronics and sensors:</p>
+
+          <ul>
+            <li>
+              <strong>Arduino Mega 2560 Rev3:</strong> main microcontroller.
+            </li>
+
+            <li>
+              <strong>DFRobot SEN0463 Geiger Counter Sensor:</strong> measured
+              radiation levels during the flight.
+            </li>
+
+            <li>
+              <strong>Micro SD Card Adapter:</strong> saved the collected sensor
+              data locally during the flight.
+            </li>
+
+            <li>
+              <strong>Adafruit STEMMA QT BME688:</strong> measured temperature,
+              humidity, pressure.
+            </li>
+
+            <li>
+              <strong>Adafruit STEMMA QT Particulate Matter Sensor:</strong>
+              measured PM1.0, PM2.5, and PM10 levels.
+            </li>
+
+            <li>
+              <strong>Adafruit STEMMA QT SCD-40:</strong> measured carbon
+              dioxide, temperature, and humidity.
+            </li>
+
+            <li>
+              <strong>GT-U7 GPS Module Receiver:</strong> recorded position,
+              altitude, speed, heading, and time data.
+            </li>
+
+            <li>
+              <strong>SPOT Trace:</strong> used for tracking and recovery.
+            </li>
+
+            <li>
+              <strong>Onboard video cameras:</strong> recorded footage during
+              the flight.
+            </li>
+          </ul>
+        </article>
+
+        <figure class="wide-figure medium-figure">
+          <a
+            class="image-link"
+            href="assets/balloon/electronics.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/balloon/electronics.jpg"
+              alt="Payload electronics before being placed inside the balloon payload"
+            />
+          </a>
+          <figcaption>
+            The electronics before being placed inside the payload.
+          </figcaption>
+        </figure>
+
+        <h2>Flight Path</h2>
+
+        <figure class="wide-figure">
+          <a
+            class="image-link"
+            href="assets/balloon/path.png"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/balloon/path.png"
+              alt="Map showing the balloon flight path from Salem to near South Boston"
+            />
+          </a>
+          <figcaption>
+            The balloon launched from Green Hill Park in Salem, Virginia and
+            landed just east of South Boston, Virginia.
+          </figcaption>
+        </figure>
+
+        <h2>Data</h2>
+
+        <p>
+          The electronics and data collection went mostly smoothly. The main
+          hiccup was not code-related, we simply underestimated how much space
+          the ropes and tie-downs would take up inside the payload. During
+          launch, those ropes pulled one of the wires out of the Arduino and
+          unplugged the TinyGPS connection.
+        </p>
+
+        <p>
+          Because of that, we do not have the exact position, heading, speed,
+          and time data from the onboard GPS for the full flight. Fortunately,
+          the SPOT Trace tracker gave us most of the flight path information we
+          needed.
+        </p>
+
+        <figure class="wide-figure medium-figure">
+          <a
+            class="image-link"
+            href="assets/balloon/mishap.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/balloon/mishap.jpg"
+              alt="Wire that came loose from the Arduino during launch"
+            />
+          </a>
+          <figcaption>
+            The wire that came loose during takeoff, circled in blue.
+          </figcaption>
+        </figure>
+
+        <div class="small-figure-grid">
+          <figure>
+            <a
+              class="image-link"
+              href="assets/balloon/alt_vs_time.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/balloon/alt_vs_time.jpg"
+                alt="Altitude versus time graph"
+              />
+            </a>
+            <figcaption>Altitude versus time.</figcaption>
+          </figure>
+
+          <figure>
+            <a
+              class="image-link"
+              href="assets/balloon/temp_vs_time.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/balloon/temp_vs_time.jpg"
+                alt="Temperature versus time graph"
+              />
+            </a>
+            <figcaption>Temperature versus time.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <hr />
+
+      <footer>
+        <a href="mailto:mhmaan@mail.roanoke.edu">mhmaan@mail.roanoke.edu</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/moazzam-maan-580829288/">
+          linkedin.com/in/moazzam-maan-580829288
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>

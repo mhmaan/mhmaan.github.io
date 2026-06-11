@@ -358,3 +358,13 @@ figcaption {
 .small-figure-grid figcaption {
   margin-top: 14px;
 }
+
+.medium-figure {
+  max-width: 650px;
+  margin: 22px auto;
+}
+
+.medium-figure img {
+  width: 100%;
+  display: block;
+}
