@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Interactive C++ Learning Environment | Moazzam Maan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <header>
+        <div class="name">Interactive C++ Learning Environment</div>
+        <div class="nav">
+          <a href="index.html">home</a>
+          <span>/</span>
+          <a href="projects.html">projects</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <section class="project-page">
+        <p class="tags">Computer Science Education</p>
+
+        <h2>Overview</h2>
+
+        <p>
+          This project is a programming environment built inside Minecraft, for
+          a simplified version of C++ (which i call MiniC++). Students write
+          MiniC++ code in an in-game IDE, run it, and undertake lessons to learn
+          concepts.
+        </p>
+
+        <p>
+          The goal was to make introductory programming concepts more fun and
+          interactive. The software-development job market has also gotten
+          rough: Indeed's software-development job-posting index, shown on
+          <a href="https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE"
+            >FRED</a
+          >, has been at an all time low recently. At the same time, some
+          schools are already seeing computer science enrollment dips: Miami
+          University's CS enrollment fell from 545 in Fall 2024 to 389 in Fall
+          2025 (<a
+            href="https://miamioh.edu/cec/about/accreditations-numbers.html"
+            >-28.6%</a
+          >), UAB's Computer Science enrollment fell from 503 in Fall 2024 to
+          421 in Fall 2025 (<a
+            href="https://www.uab.edu/institutionaleffectiveness/images/documents/enrollment-by-major/Fall-2025-Undergraduate-Enrollment-by-Major-and-Degree-Level.pdf"
+            >-16.3%</a
+          >), and William & Mary's CS enrollment fell from 292 in 2024 to 269 in
+          2025 (<a
+            href="https://www.wm.edu/offices/provost/data-trends/student-enrollment/undergraduate/"
+            >-7.9%</a
+          >). A broader Virginia public-four-year dataset also shows Computer
+          Science enrollment dropping from 1,793 in 2024-25 to 1,673 in 2025-26
+          (<a href="https://research.schev.edu/TechTalent">-6.7%</a>). It does
+          not help that AI is getting better at programming too; Anthropic lists
+          <a href="https://www.anthropic.com/claude/fable">Claude Fable 5</a> at
+          80.3% on SWE-Bench Pro.
+        </p>
+
+        <p>
+          This project was an attempt to make learning programming and computer
+          science feel more appealing and fun (which it is!) to new students.
+          Video games are fun, and Minecraft is a game that most people can
+          understand quickly, so it felt like a natural place to build an
+          interactive programming environment.
+        </p>
+
+        <h2>How It Is Built</h2>
+
+        <article class="detail-box">
+          <h3>Structure</h3>
+
+          <p>The projcet has four main parts:</p>
+
+          <ul class="highlight-list">
+            <li>
+              <strong>Plugin:</strong> a
+              <a href="https://papermc.io/downloads/paper">Paper</a> server
+              plugin containing the lesson logic and interpreter.
+            </li>
+
+            <li>
+              <strong>Editor:</strong> a
+              <a href="https://fabricmc.net/">Fabric</a> client mod containing
+              the in-game IDE.
+            </li>
+
+            <li>
+              <strong>Language:</strong> the MiniC++ language definition using
+              <a href="https://www.antlr.org/">ANTLR</a>.
+            </li>
+
+            <li>
+              <strong>Server:</strong> a local Paper server containing the world
+              used for the lessons.
+            </li>
+          </ul>
+        </article>
+
+        <h2>The IDE</h2>
+
+        <figure class="wide-figure">
+          <a
+            class="image-link"
+            href="assets/minecraft/IDE.png"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/minecraft/IDE.png"
+              alt="MiniC++ IDE running inside Minecraft"
+            />
+          </a>
+          <figcaption>The in-game MiniC++ IDE.</figcaption>
+        </figure>
+
+        <article class="detail-box">
+          <h3>What students can do</h3>
+
+          <p>
+            Students can move around the classroom, jump into lessons, open the
+            IDE, and run code as they like. The lesson programs control a bot
+            using MiniC++ commands and use beginner programming ideas like
+            conditionals, loops, functions, arrays etc. They start with simple
+            sequential programming and build toward more complex tasks.
+          </p>
+        </article>
+
+        <figure class="wide-figure">
+          <video controls preload="metadata">
+            <source src="assets/minecraft/lesson.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>
+            Walkthrough of one of the MiniC++ Minecraft lessons.
+          </figcaption>
+        </figure>
+      </section>
+
+      <hr />
+
+      <footer>
+        <a href="mailto:mhmaan@mail.roanoke.edu">mhmaan@mail.roanoke.edu</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/moazzam-maan-580829288/">
+          linkedin.com/in/moazzam-maan-580829288
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>
