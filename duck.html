@@ -50,17 +50,300 @@
           <a href="https://www.chess.com/terms/duck-chess">Duck Chess</a>.
         </p>
 
+        <p>
+          In Duck Chess, each player finishes their turn by places the duck onto
+          an empty square. Wherever it lands, the duck blocks pieces from moving
+          onto its square and, for pieces that move along a line, from traveling
+          through it.
+        </p>
+
+        <p>
+          Exactly how that functions depends on the piece: a rook can lose a
+          whole stretch of possible moves, while a knight only cares if the duck
+          has stolen its landing spot. See figures below for an example of the
+          duck blocking each piece.
+        </p>
+
+        <figure class="wide-figure medium-figure duck-chess-game">
+          <img
+            src="assets/duck/duck-chess.gif"
+            alt="An animated game of Duck Chess"
+          />
+          <figcaption>
+            A game of Duck Chess. Taken from
+            <a href="https://www.chess.com/terms/duck-chess">Chess.com</a>.
+          </figcaption>
+        </figure>
+
+        <figure class="duck-piece-effects">
+          <div class="small-figure-grid duck-piece-grid">
+            <figure>
+              <img
+                src="assets/duck/king.png"
+                alt="How the duck changes a king's legal moves"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="assets/duck/queen.png"
+                alt="How the duck changes a queen's legal moves"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="assets/duck/rook.png"
+                alt="How the duck changes a rook's legal moves"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="assets/duck/bishop.png"
+                alt="How the duck changes a bishop's legal moves"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="assets/duck/knight.png"
+                alt="How the duck changes a knight's legal moves"
+              />
+            </figure>
+          </div>
+
+          <figcaption>
+            How the duck changes the legal moves of a king, queen, rook, bishop,
+            and knight.
+          </figcaption>
+        </figure>
+
         <article class="detail-box">
+          <h3>The Game of Ducks and Robbers</h3>
+
           <p>
-            This project is still very much in progress, so I cannot share too
-            much yet. That said, we have made a lot of progress, and I am saving
-            the good stuff for the paper. More to come, I promise!
+            We use this idea to create a new game, <em>Ducks and Robbers</em>,
+            played on what we call a <em>duck graph</em>.
+          </p>
+
+          <p>
+            Duck graphs are a little like
+            <a href="https://en.wikipedia.org/wiki/Hypergraph">hypergraphs</a>.
+            A hypergraph has hyperedges, which are sets of vertices. A duck
+            graph instead has <em>lanes</em>: ordered sequences of vertices.
+            That order tells us not only which vertices are connected, but which
+            ones lie in between, and therefore exactly where a duck can get in
+            the way.
           </p>
         </article>
 
-        <figure class="medium-figure plain-media">
-          <img src="assets/duck/duck.gif" alt="Animated duck gif" />
+        <figure class="duck-graph-comparison">
+          <div class="small-figure-grid">
+            <figure>
+              <a class="image-link" href="assets/duck/3x3_rook.pdf">
+                <img
+                  src="assets/duck/3x3_rook.png"
+                  alt="A three-by-three rook duck graph with horizontal and vertical lanes"
+                />
+              </a>
+            </figure>
+
+            <figure>
+              <a class="image-link" href="assets/duck/3x3_bishop.pdf">
+                <img
+                  src="assets/duck/3x3_bishop.png"
+                  alt="A three-by-three bishop duck graph with diagonal lanes"
+                />
+              </a>
+            </figure>
+          </div>
+
+          <figcaption>
+            A rook duck graph (left) and a bishop duck graph (right) on the same
+            vertex set. In the rook graph, the duck blocks horizontal and
+            vertical movement; in the bishop graph, it blocks diagonal movement.
+            The yellow and blue blobs represent the lanes.
+          </figcaption>
         </figure>
+
+        <article class="detail-box">
+          <h3>Canonical Duck Graphs</h3>
+
+          <p>
+            Chess graphs come with their lanes built in. For graphs that do not
+            arrive with a chess piece attached, we use the
+            <em>canonical duck graph</em>: every edge becomes a two-vertex lane,
+            with one-vertex lanes for any isolated vertices. The duck therefore
+            blocks only the vertex it is sitting on. This gives us a standard
+            way to bring every graph family into the game.
+          </p>
+
+          <p>Our results for canonical duck graphs include:</p>
+
+          <ul class="highlight-list">
+            <li>
+              <strong>Cycles:</strong> for <em>n</em> at least 5, the duck cop
+              number of <em>C</em><sub>n</sub> is 2.
+            </li>
+            <li>
+              <strong>Cocktail party graphs:</strong> the duck cop number is 1,
+              even though the classical cop number is 2.
+            </li>
+            <li>
+              <strong>Trees:</strong> the duck cop number is equal to the number
+              of
+              <a href="https://en.wikipedia.org/wiki/Support_vertex"
+                >support vertices</a
+              >
+              in the tree.
+            </li>
+            <li>
+              <strong>Hypercubes:</strong> the <em>n</em>-dimensional hypercube
+              <em>Q</em><sub>n</sub> has duck cop number
+              &#8970;<em>n</em>/2&#8971;.
+            </li>
+            <li>
+              <strong>Disconnected graphs:</strong> the duck cop number is the
+              sum of the duck cop numbers of the connected components.
+            </li>
+          </ul>
+        </article>
+
+        <h2>Characterization of Duck Graphs Where <em>k</em> Cops Can Win</h2>
+
+        <p>
+          We characterize the duck graphs where <em>k</em> cops can win, in a
+          way similar to the characterization of ordinary <em>k</em>-cop-win
+          graphs in
+          <a
+            href="https://www.sciencedirect.com/science/article/pii/S0012365X12000064"
+            >this paper</a
+          >.
+        </p>
+
+        <p>
+          A concise statement is the following. Write
+          <b>y</b> = (<var>y</var><sub>1</sub>, &hellip;, <var>y</var
+          ><sub><var>k</var></sub
+          >) and [<b>y</b>] = {<var>y</var><sub>1</sub>, &hellip;, <var>y</var
+          ><sub><var>k</var></sub
+          >}. Then:
+        </p>
+
+        <div
+          class="characterization-formula"
+          aria-label="Recursive characterization of k-duck-cop-win graphs"
+        >
+          <p>
+            <var>x</var>
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span><sub>0</sub
+              ><sup><var>k</var></sup></span
+            >
+            <b>y</b> &iff; <var>x</var> &isin; [<b>y</b>].
+          </p>
+          <p>
+            <var>x</var>
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span
+              ><sub><var>&alpha;</var></sub
+              ><sup><var>k</var></sup></span
+            >
+            <b>y</b> &iff; &forall; <var>d</var><sub>1</sub> &isin;
+            <var>V</var>(<var>D</var>) &#8726; ({<var>x</var>} &cup;
+            [<b>y</b>]), &exist; <b>y</b>&prime; &isin;
+            <span class="stacked-scripts"
+              ><span class="script-base">&prod;</span><sub><var>i</var>=1</sub
+              ><sup><var>k</var></sup></span
+            >
+            <var>N</var><sup><var>d</var><sub>1</sub></sup
+            >[<var>y</var><sub><var>i</var></sub
+            >] :
+          </p>
+          <p>
+            <var>x</var> &isin; [<b>y</b>&prime;] &or; &exist; <var>d</var
+            ><sub>2</sub> &isin; <var>V</var>(<var>D</var>) &#8726;
+            ({<var>x</var>} &cup; [<b>y</b>&prime;]), &forall;
+            <var>x</var>&prime; &isin; <var>N</var
+            ><sup><var>d</var><sub>2</sub></sup
+            >[<var>x</var>], &exist; <var>&beta;</var> &lt; <var>&alpha;</var> :
+            <var>x</var>&prime;
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span
+              ><sub><var>&beta;</var></sub
+              ><sup><var>k</var></sup></span
+            >
+            <b>y</b>&prime; &emsp;(<var>&alpha;</var> &gt; 0).
+          </p>
+          <p>
+            &#8828;<sup><var>k</var></sup> :=
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span
+              ><sub><var>&rho;</var></sub
+              ><sup><var>k</var></sup></span
+            >, &ensp;<var>&rho;</var> = min{<var>&alpha;</var> :
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span
+              ><sub><var>&alpha;</var></sub
+              ><sup><var>k</var></sup></span
+            >
+            =
+            <span class="stacked-scripts"
+              ><span class="script-base">&#8828;</span
+              ><sub><var>&alpha;</var>+1</sub><sup><var>k</var></sup></span
+            >}.
+          </p>
+          <p>
+            <var>D</var> is <var>k</var>-duck-cop-win &iff; &exist;
+            <b>y</b> &isin; <var>V</var>(<var>D</var>)<sup><var>k</var></sup>
+            &forall; <var>x</var> &isin; <var>V</var>(<var>D</var>) :
+            <var>x</var> &#8828;<sup><var>k</var></sup> <b>y</b>.
+          </p>
+        </div>
+
+        <p>Have fun deciphering that.</p>
+
+        <article class="detail-box">
+          <h3>Chess Graph Results</h3>
+
+          <p>And now, back to the pieces that started all of this:</p>
+
+          <ul class="highlight-list">
+            <li>
+              <strong>Kings:</strong> for <em>m</em>, <em>n</em> &gt; 1, the
+              <em>m</em> &times; <em>n</em> king duck graph has duck cop number
+              1.
+            </li>
+            <li>
+              <strong>Rooks:</strong> for <em>m</em>, <em>n</em> &ge; 4, the
+              <em>m</em> &times; <em>n</em> rook duck graph has duck cop number
+              2.
+            </li>
+            <li>
+              <strong>Bishops:</strong> for <em>m</em>, <em>n</em> &ge; 4, the
+              duck cop number is 6 when <em>m</em> and <em>n</em> are both odd,
+              and 4 otherwise.
+            </li>
+            <li>
+              <strong>Knights:</strong> the duck cop number is greater than 2.
+              We do not have an upper bound yet.
+            </li>
+            <li>
+              <strong>Queens:</strong> the duck cop number is either 6 or 7.
+            </li>
+          </ul>
+        </article>
+
+        <article class="detail-box">
+          <h3>Cop Number and Duck Cop Number</h3>
+
+          <p>
+            Lastly, we show by construction that, for any positive integers
+            <em>p</em> and <em>k</em>, there is a graph <em>G</em> with duck cop
+            number <em>p</em> and classical cop number <em>k</em>.
+          </p>
+        </article>
       </section>
 
       <hr />

@@ -389,6 +389,53 @@ video {
   justify-self: center;
 }
 
+.duck-chess-game {
+  max-width: 520px;
+}
+
+.duck-piece-effects {
+  margin: 22px 0;
+}
+
+.duck-piece-effects .small-figure-grid {
+  margin-bottom: 14px;
+}
+
+.duck-piece-effects > figcaption {
+  margin-top: 0;
+  text-align: center;
+}
+
+.duck-graph-comparison {
+  margin: 22px 0;
+}
+
+.duck-graph-comparison .small-figure-grid {
+  margin-bottom: 14px;
+}
+
+.duck-graph-comparison > figcaption {
+  margin-top: 0;
+}
+
+.duck-piece-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.duck-piece-grid figure {
+  grid-column: span 2;
+}
+
+.duck-piece-grid figure:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.duck-piece-grid figure:last-child:nth-child(odd) {
+  grid-column: 4 / span 2;
+  max-width: none;
+  justify-self: stretch;
+}
+
 @media (max-width: 700px) {
   .small-figure-grid {
     grid-template-columns: 1fr;
@@ -396,6 +443,14 @@ video {
 
   .small-figure-grid figure:last-child:nth-child(odd) {
     max-width: 100%;
+  }
+
+  .duck-piece-grid figure,
+  .duck-piece-grid figure:nth-child(4),
+  .duck-piece-grid figure:last-child:nth-child(odd) {
+    grid-column: 1;
+    max-width: 100%;
+    justify-self: stretch;
   }
 }
 
@@ -407,4 +462,59 @@ video {
 .highlight-list li {
   margin: 10px 0;
   line-height: 1.5;
+}
+
+.characterization-formula {
+  margin: 20px 0;
+  padding: 4px 0 10px;
+  overflow-x: auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.characterization-formula p {
+  margin: 0 0 8px;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.characterization-formula p:last-child {
+  margin-bottom: 0;
+}
+
+.stacked-scripts {
+  display: inline-grid;
+  grid-template-areas:
+    "base superscript"
+    "base subscript";
+  grid-template-columns: auto auto;
+  grid-template-rows: 0.72em 0.72em;
+  column-gap: 0.03em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.stacked-scripts .script-base {
+  grid-area: base;
+  align-self: center;
+}
+
+.stacked-scripts > sup,
+.stacked-scripts > sub {
+  position: static;
+  font-size: 0.68em;
+  line-height: 1;
+  text-align: left;
+}
+
+.stacked-scripts > sup {
+  grid-area: superscript;
+  align-self: end;
+}
+
+.stacked-scripts > sub {
+  grid-area: subscript;
+  align-self: start;
 }
