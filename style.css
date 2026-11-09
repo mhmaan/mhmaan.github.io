@@ -518,3 +518,17 @@ video {
   grid-area: subscript;
   align-self: start;
 }
+
+.solar-photo-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: var(--color-muted);
+  background: #ededed;
+  border: 2px dashed var(--color-border);
+  box-shadow: var(--shadow-raised) var(--color-shadow);
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}

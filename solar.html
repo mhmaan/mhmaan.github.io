@@ -21,7 +21,7 @@
 
       <hr />
 
-      <section class="project-page">
+      <section class="project-page solar-project">
         <p class="tags">Engineering</p>
 
         <div class="project-info">
@@ -31,13 +31,82 @@
               >Dr. Truong Le</a
             >
           </p>
+          <p><strong>Timeline:</strong> June 2026–present</p>
         </div>
 
-        COMING SOON
+        <h2>Overview</h2>
 
-        <figure class="medium-figure plain-media">
-          <img src="assets/solar/panel.gif" alt="Animated solar panel gif" />
+        <p>
+          How much energy do we actually gain by making a solar panel follow the
+          Sun? This project compares a fixed 275&nbsp;W panel with an otherwise
+          similar 275&nbsp;W panel on a single-axis tracker.
+        </p>
+
+        <p>
+          Because this is a long-term experiment, and the comparison depends on
+          data collected over an extended period, both setups need to run
+          autonomously. We also want the data to be readily available online, so
+          monitoring the experiment does not rely on proximity.
+        </p>
+
+        <article class="detail-box">
+          <h3>What each system needs to do</h3>
+
+          <ul class="highlight-list">
+            <li>
+              Read and store data from the charge controller and SmartShunt.
+            </li>
+            <li>
+              Automatically switch the discharge circuit on at sunset and off at
+              sunrise.
+            </li>
+            <li>Upload the logs to the cloud for remote access.</li>
+          </ul>
+        </article>
+
+        <p>
+          Below is a schematic of the fixed-panel circuit. Both circuits were
+          designed, assembled and programmed entirely by me.
+        </p>
+
+        <figure class="wide-figure">
+          <a
+            class="image-link"
+            href="assets/solar/schematic.png"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/solar/schematic.png"
+              alt="Simplified wiring schematic for the fixed solar panel system"
+            />
+          </a>
+          <figcaption>
+            Simplified schematic of the fixed-panel half of the circuit. Created
+            using GPT-5.6 Sol; wiring verified for correctness by me.
+          </figcaption>
         </figure>
+
+        <p>
+          The important part is done - the circuit is set up and collecting
+          data. The slightly less glamorous next step is organizing the
+          components to slightly reduce the spaghetti aesthetic.
+        </p>
+
+        <figure class="wide-figure medium-figure">
+          <div
+            class="solar-photo-placeholder"
+            role="img"
+            aria-label="Placeholder for a photograph of the assembled solar circuit"
+          >
+            <span>circuit photo coming soon</span>
+          </div>
+          <figcaption>
+            The circuit. You probably see what I meant by spaghetti now.
+          </figcaption>
+        </figure>
+
+        Fun stuff!
       </section>
 
       <hr />
